@@ -47,3 +47,5 @@ apisix-dotnet-docker-prometheus-1         "/bin/prometheus --c…"   prometheus 
 Once the containers are running, navigate to `http://localhost:5555/api/products` in your web browser and you will see the following output:
 
 ![Product list .NET API response](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/arxo86mr9emolgfl25ut.png)
+
+You can read a blog post for more information on how to configure APISIX API Gateway for the ASP.NET API.
