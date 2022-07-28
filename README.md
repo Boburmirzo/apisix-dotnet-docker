@@ -48,4 +48,13 @@ Once the containers are running, navigate to `http://localhost:5555/api/products
 
 ![Product list .NET API response](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/arxo86mr9emolgfl25ut.png)
 
-You can read a blog post for more information on how to configure APISIX API Gateway for the ASP.NET API.
+You can read the blog post for more information on how to configure APISIX API Gateway for the ASP.NET API.
+
+- Hashnode:
+https://boburadvocate.hashnode.dev/manage-net-microservices-apis-with-apache-apisix-api-gateway
+
+- DevTo
+https://dev.to/apisix/manage-net-microservices-apis-with-apache-apisix-api-gateway-2cbk
+
+- Medium
+https://medium.com/@ApacheAPISIX/manage-net-microservices-apis-with-apache-apisix-api-gateway-13e85853876f
