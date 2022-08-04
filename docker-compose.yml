@@ -64,7 +64,7 @@ services:
     networks:
       apisix:
 
-  productapi:
+  productapi1:
     image: productapi
     build:
       context: ./productapi
@@ -73,6 +73,15 @@ services:
       - "5555:80"    
     networks:
       apisix:
+  productapi2:
+    image: productapi
+    build:
+      context: ./productapi
+      dockerfile: Dockerfile
+    ports:
+      - "5556:80"    
+    networks:
+      apisix:    
 
 networks:
   apisix:
