@@ -67,7 +67,7 @@ services:
   productapi:
     image: productapi
     build:
-      context: ./productapi
+      context: ./ProductApi
       dockerfile: Dockerfile
     ports:
       - "5555:80"    
