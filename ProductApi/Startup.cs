@@ -1,16 +1,11 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ProductApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace ProductApi
 {
@@ -28,6 +23,25 @@ namespace ProductApi
         {
             services.AddControllers();
             services.AddScoped<IProductsService, ProductsService>();
+            services.AddHealthChecks()
+                .AddCheck("random-health-status", () =>
+                {
+                    Random rnd = new();
+
+                    for (int j = 0; j < 100; j++)
+                    {
+                       var rndNum = rnd.Next();
+                        if (rndNum % 2 == 0)
+                        {
+                            return HealthCheckResult.Unhealthy();
+                        }
+                        else {
+                            return HealthCheckResult.Healthy();
+                        } 
+
+                    }
+                    return HealthCheckResult.Unhealthy();
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,6 +51,8 @@ namespace ProductApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseHealthChecks("/api/health");
 
             app.UseHttpsRedirection();
 

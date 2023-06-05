@@ -61,6 +61,8 @@ plugins:
   - consumer-restriction
   - uri-blocker
   - openid-connect
+  - api-breaker
+  - fault-injection
 plugin_attr:
   prometheus:
     export_addr:
